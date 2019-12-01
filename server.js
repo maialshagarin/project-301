@@ -26,23 +26,36 @@ function Number(data) {
 
 }
 
+
+
+
 server.post('/enter', (req, res) => {
-  let url =`http://numbersapi.com/random/math?json`
+  let url =`http://numbersapi.com/`;
+  
+  
 
   if (req.body.type === 'date') {
-    url = `http://numbersapi.com/` + req.body.items + `?json`
+    url = url + req.body.number +'/'+ req.body.items + `?json`
    
 
 
   } else if (req.body.type === 'maths') {
-    url = `http://numbersapi.com/random/` + req.body.items + `?json`
+    url= url + req.body.number +'/'+ req.body.items + `?json`
 
 
   } else if (req.body.type === 'trivia') {
-    url = `http://numbersapi.com/random/` + req.body.items + `?json`
+    url = url + req.body.number +'/'+ req.body.items + `?json`
   }
+  else if (req.body.type === 'year') {
+    url = url + req.body.number +'/'+ req.body.items + `?json`
+
+
+  }
+ console.log('body', req.body);
  
- 
+ console.log("url",url);
+  
+ console.log("number", req.body.number);
 
 
   return superagent.get(url)

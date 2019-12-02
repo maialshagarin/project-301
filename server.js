@@ -27,62 +27,79 @@ server.get('/index', (req, res) => {
 server.get('/results', (req, res) => {
   res.render('pages/results')
 });
+
 server.get('/results', getnumbers);
-server.post('/add', savednumbers);
+// server.post('/add', savednumbers);
 server.get('/', (req, res) => {
   res.render('pages/index');
   
 });
-
-function Number(data) {
-  this.number = data.number;
-  this.text = data.text;
-  this.found = data.found;
-  this.type = data.type;
-
-}
-
-
-
-function savednumbers(req, res) {
-  console.log('jjjjjjjkjkjkjkjkj',item);
+server.post('/addto', (req,res)=>{
+  let {number, type, text} = req.body;
+  console.log('reqqqqqqqq', req.body);
   
-  let {number, type, text } = req.body;
-  console.log(req.body);
   let SQL = 'INSERT INTO numbertable (number, type, text) VALUES ($1, $2, $3);';
   let values = [number, type, text];
   
   console.log('vallllllllllllllllll', values);
   client.query(SQL, values)
-      .then(results => {
+      .then(results => {s
           res.redirect('/results');
       })
+
+})
+
+// function Number(data) {
+//   this.number = data.number;
+//   this.text = data.text;
+//   this.found = data.found;
+//   this.type = data.type;
+
+// }
+
+
+
+function savednumbers(data) {
+  
+  let {number, type, text } = data;
+  // console.log(req.body);
+  let SQL = 'INSERT INTO numbertable (number, type, text) VALUES ($1, $2, $3) RETURNING *' ;
+  let values = [number, type, text];
+  
+  // console.log('vallllllllllllllllll', values);
+  return client.query(SQL, values)
+  .then(results => results.rows[0])
+    
 };
 
 server.post('/add', (req, res) => {
   let num= req.body.number;
   let type = req.body.items;
   // let {number, type, text } = req.body;
-  console.log('tye\n\n\n\n\n\n', type);
+  // console.log('tye\n\n\n\n\n\n', type);
   let url =`http://numbersapi.com/${num}/${type}?json`
-console.log ('urllllllllll', url);
+// console.log ('urllllllllll', url);
    superagent.get(url)
   .then(data => {
-    let item = data.body;
-    console.log ('item', item );
-  
-      res.render('pages/results', {item: item})
-       
-  .then(stuff => {
-    
-    stuff=savednumbers();
-  
+    let item = {
+      number: num,
+      type: type,
+      text: data.body.text
+    };
 
-   
+    savednumbers(item)
+    .then (record =>{
+      res.render('pages/results', {item: record})
+
+    })
+
+  
+       
  
- });
 
   })
+ 
+    
  
 });
 

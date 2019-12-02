@@ -13,19 +13,19 @@
         <li><a href='/results'> Results</a> </li>
         <li><a href='/contact'> Contact us</a> </li>
     </ul>
-   
-    <ul>
-        <li id="number"> The Number You Enter is <%= item.number %></li>
-        <li id="type"> The Type You Chose is  <%= item.type %></li>
-        <li id="text"> The Results is <%= item.text %></li>
+
+    <% results.forEach(task => { %>
+    <ul >
+            
+        <li id="number"> The Number You Enter is <%= task.number %></li>
+        <li id="type"> The Type You Chose is  <%= task.type %></li>
+        <li id="text"> The Results is <%= task.text %></li>
+       
 
     </ul>
-<form>
+    <% }) %>
 
-
-</form>
     
-
 
 </body>
 

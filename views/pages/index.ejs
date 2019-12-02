@@ -12,13 +12,13 @@
 
 <body>
     <ul>
-        <li> <a href="index.ejs"> Home Page</a> </li>
-        <li><a href="results.ejs"> Resultts</a> </li>
-        <li><a href="contact.ejs"> Contact Us</a> </li>
+        <li> <a href='/index'> Home Page</a> </li>
+        <li><a href='/results'> Results</a> </li>
+        <li><a href='/contact'> Contact us</a> </li>
     </ul>
 
 
-    <form action="/enter" method="post">
+    <form action="/add" method="post">
         <label>
             User Name
             <input type="text" name="name" placeholder="Enter Your Name">
@@ -28,7 +28,7 @@
         <select name="items" class="select">
             <option >Choose Type</option>
             <option   value="date" >Date</option>
-            <option   value="maths">Maths</option>
+            <option   value="math">Maths</option>
             <option   value="year">Year</option>
             <option   value="trivia">Trivia</option>
         </select><br>

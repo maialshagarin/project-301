@@ -9,19 +9,22 @@
 <body>
 
     <ul>
-        <li> <a href="index.ejs"> Home Page</a> </li>
-        <li><a href="results.ejs"> Resultts</a> </li>
-        <li><a href="contact.ejs"> Contact Us</a> </li>
+        <li> <a href='/index'> Home Page</a> </li>
+        <li><a href='/results'> Results</a> </li>
+        <li><a href='/contact'> Contact us</a> </li>
     </ul>
    
     <ul>
-        <li id="text"> <%= data.text %></li>
-        <li id="number"> <%= data.number %></li>
-        <li id="type"> <%= data.type %></li>
+        <li id="number"> The Number You Enter is <%= item.number %></li>
+        <li id="type"> The Type You Chose is  <%= item.type %></li>
+        <li id="text"> The Results is <%= item.text %></li>
 
     </ul>
+<form>
 
-    <% }); %>
+
+</form>
+    
 
 
 </body>

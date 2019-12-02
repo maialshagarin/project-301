@@ -5,6 +5,10 @@ require('dotenv').config();
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const superagent = require('superagent');
+const pg = require('pg');
+
+const client = new pg.Client(process.env.DATABASE_URL);
+// client.on('error', err => console.error(err));
 
 const server = express();
 
@@ -14,8 +18,20 @@ server.use(express.urlencoded({ extended: true }))
 server.set('view engine', 'ejs');
 
 
-server.get('/enter', (req, res) => {
+server.get('/contact', (req, res) => {
+  res.render('pages/contact')
+});
+server.get('/index', (req, res) => {
+  res.render('pages/index')
+});
+server.get('/results', (req, res) => {
+  res.render('pages/results')
+});
+server.get('/results', getnumbers);
+server.post('/add', savednumbers);
+server.get('/', (req, res) => {
   res.render('pages/index');
+  
 });
 
 function Number(data) {
@@ -28,47 +44,59 @@ function Number(data) {
 
 
 
-
-server.post('/enter', (req, res) => {
-  let url =`http://numbersapi.com/`;
+function savednumbers(req, res) {
+  console.log('jjjjjjjkjkjkjkjkj',item);
   
+  let {number, type, text } = req.body;
+  console.log(req.body);
+  let SQL = 'INSERT INTO numbertable (number, type, text) VALUES ($1, $2, $3);';
+  let values = [number, type, text];
   
+  console.log('vallllllllllllllllll', values);
+  client.query(SQL, values)
+      .then(results => {
+          res.redirect('/results');
+      })
+};
 
-  if (req.body.type === 'date') {
-    url = url + req.body.number +'/'+ req.body.items + `?json`
-   
-
-
-  } else if (req.body.type === 'maths') {
-    url= url + req.body.number +'/'+ req.body.items + `?json`
-
-
-  } else if (req.body.type === 'trivia') {
-    url = url + req.body.number +'/'+ req.body.items + `?json`
-  }
-  else if (req.body.type === 'year') {
-    url = url + req.body.number +'/'+ req.body.items + `?json`
-
-
-  }
- console.log('body', req.body);
- 
- console.log("url",url);
-  
- console.log("number", req.body.number);
-
-
-  return superagent.get(url)
+server.post('/add', (req, res) => {
+  let num= req.body.number;
+  let type = req.body.items;
+  // let {number, type, text } = req.body;
+  console.log('tye\n\n\n\n\n\n', type);
+  let url =`http://numbersapi.com/${num}/${type}?json`
+console.log ('urllllllllll', url);
+   superagent.get(url)
   .then(data => {
-    console.log('hhhhhh',data.body);
-    let stuff = data.body;
-         let x =  new Number(stuff);
-      console.log('numberitem', numberitem);
-      res.render('pages/results', {item: x});
-  });
+    let item = data.body;
+    console.log ('item', item );
+  
+      res.render('pages/results', {item: item})
+       
+  .then(stuff => {
+    
+    stuff=savednumbers();
+  
+
+   
+ 
+ });
+
+  })
+ 
 });
 
 
+function getnumbers(req, res) {
+  let SQL = 'SELECT * FROM numbertable;';
+  return client.query(SQL)
+      .then(results => {
+        
+          res.render('pages/results', { item: results.rows });
+      })
+      
+}
 
 
-server.listen(PORT, () => console.log(`I'M  Alive ${PORT}`));
+client.connect()
+    .then(() => server.listen(PORT, () => console.log(`I'M  Alive ${PORT}`)));

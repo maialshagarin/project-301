@@ -8,38 +8,39 @@
 
 <body>
 
-        <header>
-                <ul>
-                    <li> <a href='/index'> Home Page</a> </li>
-                    <li><a href='/results'> Results</a> </li>
-                    <li><a href='/contact'> Contact us</a> </li>
-                </ul>
-            </header>
-    <h1 class="animate backwards">The Animated Title</h1>
-    <h1 class="animate forwards">The Animated Title</h1>
-    <h1 class="animate mixed">The Animated Title </h1>
-   
-   
-   <form action="/delete" method="POST">
+    <header>
+        <ul>
+            <li> <a href='/index'> Home Page</a> </li>
+            <li><a href='/results'> Results</a> </li>
+            <li><a href='/contact'> Contact us</a> </li>
+        </ul>
+    </header>
+    <h1 class="qoute">“99 percent of all statistics only tell 49 percent of the story.”</h1>
+    <h2 class="list">The tales of your numbers :</h2>
+
+
+
     <% item.forEach(task => { %>
-        <ul >
-            
+    <form action="/delete/ <%- task.number_id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value='<%= task.number_id %>'>
+        <ul>
             <li id="number"> The Number You Enter is <%= task.number %></li>
-            <li id="type"> The Type You Chose is  <%= task.type %></li>
+            <li id="type"> The Type You Chose is <%= task.type %></li>
             <li id="text"> The Results is <%= task.text %></li>
             <li><button>Delete</button></li>
-            
-            
+
+
         </ul>
-        <% }) %>
-        
+
     </form>
-    
+    <% }) %>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-   
+
     <script src="../../public/app.js"></script>
- 
+
 
 </body>
 

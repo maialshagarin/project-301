@@ -13,6 +13,15 @@ server.use(express.urlencoded({ extended: true }))
 
 server.set('view engine', 'ejs');
 
+server.get('/contact', (req, res) => {
+  res.render('pages/contact')
+});
+server.get('/index', (req, res) => {
+  res.render('pages/index')
+});
+server.get('/results', (req, res) => {
+  res.render('pages/results')
+});
 
 server.get('/enter', (req, res) => {
   res.render('pages/index');
@@ -27,20 +36,11 @@ function Number(data) {
 }
 
 server.post('/enter', (req, res) => {
-  let url =`http://numbersapi.com/random/math?json`
-
-  if (req.body.type === 'date') {
-    url = `http://numbersapi.com/` + req.body.items + `?json`
-   
-
-
-  } else if (req.body.type === 'maths') {
-    url = `http://numbersapi.com/random/` + req.body.items + `?json`
-
-
-  } else if (req.body.type === 'trivia') {
-    url = `http://numbersapi.com/random/` + req.body.items + `?json`
-  }
+  let num= req.body.number;
+  let type = req.body.items
+  console.log(num)
+  let url =`http://numbersapi.com/${num}/${type}?json`
+ 
  
  
 
@@ -50,7 +50,7 @@ server.post('/enter', (req, res) => {
     console.log('hhhhhh',data.body);
     let stuff = data.body;
          let x =  new Number(stuff);
-      console.log('numberitem', numberitem);
+      // console.log('numberitem', numberitem);
       res.render('pages/results', {item: x});
   });
 });

@@ -55,7 +55,7 @@ function savednumbers(data) {
   let { number, type, text } = data;
   let SQL = 'INSERT INTO numbertable (number, type, text) VALUES ($1, $2, $3) RETURNING *';
   let values = [number, type, text];
-  console.log('vallllllllllllllllll', values);
+  // console.log('vallllllllllllllllll', values);
   return client.query(SQL, values)
     .then(results => results.rows[0])
     .catch(err => handleError(err, response));
@@ -70,14 +70,17 @@ function savednumbers(data) {
 server.post('/add', (req, res) => {
   let num = req.body.number;
   let type = req.body.items;
-  // let SQL = `SELECT * FROM numbertable where type=${type}&& number=${num}`;
+  let SQL = `SELECT * FROM numbertable where number=$1 and type=$2`;
+  let values =[ num ,type];
 
-  // client.query(SQL, num, type)
-  //   .then(data => {
-  //     if (data.rows > 0) {
-  //       res.send(results.rows[0]);
+  client.query(SQL, values)
+    .then(data => {
+      console.log ('data', data)
+      if (data.rows.length > 0) {
+        res.render('pages/yourChoice', { item: data.rows[0] });
+        // res.send(data.rows[0]);
 
-  //     } else {
+      } else {
         let url = `http://numbersapi.com/${num}/${type}?json`
         superagent.get(url)
           .then(data => {
@@ -90,14 +93,15 @@ server.post('/add', (req, res) => {
 
             savednumbers(item)
               .then(record => {
-                res.render('pages/yourChoice', { item: record })
-                // .catch(err => handleError(err, response));
-
-
-              });
+                res.render('pages/yourChoice', { item: record });
+                
+                
+              })
+              .catch(err => handleError(err, response));
           });
-      // }
+      }
     });
+  });
 
 //////////////////////////// to show  all of results in the result page //////////////////
   function getnumbers(req, res) {
@@ -107,10 +111,9 @@ server.post('/add', (req, res) => {
 
         res.render('pages/results', { item: results.rows })
 
-        .catch(err => handleError(err, response));
-
-
+              
       })
+      .catch(err => handleError(err, response));
 
   }
 /////////////////////////// to delete the one you don't it to still in your page //////////////
@@ -120,8 +123,6 @@ server.post('/add', (req, res) => {
     client.query(SQL, values)
       .then(res.redirect('/'))
       .catch(err => handleError(err, response));
-
-    // .catch((error)=>errorHandler(error,res))
   }
 
 

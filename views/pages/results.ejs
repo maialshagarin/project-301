@@ -8,6 +8,7 @@
 
 <body>
 
+<<<<<<< HEAD
     <ul>
         <li> <a href='/index'> Home Page</a> </li>
 <<<<<<< HEAD
@@ -32,7 +33,40 @@
     <% }) %>
 >>>>>>> 959c8e59b27be9b220f2bf36df30d4c3fe603cdb
 
+=======
+        <header>
+                <ul>
+                    <li> <a href='/index'> Home Page</a> </li>
+                    <li><a href='/results'> Results</a> </li>
+                    <li><a href='/contact'> Contact us</a> </li>
+                </ul>
+            </header>
+    <h1 class="animate backwards">The Animated Title</h1>
+    <h1 class="animate forwards">The Animated Title</h1>
+    <h1 class="animate mixed">The Animated Title </h1>
+   
+   
+   <form action="/delete" method="POST">
+    <% item.forEach(task => { %>
+        <ul >
+            
+            <li id="number"> The Number You Enter is <%= task.number %></li>
+            <li id="type"> The Type You Chose is  <%= task.type %></li>
+            <li id="text"> The Results is <%= task.text %></li>
+            <li><button>Delete</button></li>
+            
+            
+        </ul>
+        <% }) %>
+        
+    </form>
+>>>>>>> 815406c412eb33dcb8b5b59f7ed6de61e1d7a780
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+   
+    <script src="../../public/app.js"></script>
+ 
 
 </body>
 

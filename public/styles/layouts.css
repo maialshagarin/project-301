@@ -1,37 +1,53 @@
-* {box-sizing: border-box;}
-body {
-background-image: url(https://wallpapercave.com/wp/wp2414722.jpg);
-    position: relative;
-    background-repeat: no-repeat, repeat;
-    color: whitesmoke;
-    font-family: 'Pacifico', cursive; 
-  }
-  
 
-ul {
-  display: grid;
-  grid-gap: 20px;
-  padding: 0;
-  list-style: none;
-  grid-template-columns: repeat(4, 1fr);
-  margin-right: 25px;
-  
+ 
+ body{
+  background-color: gray;
+ height : 100vh;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+
+
 }
-ul li a {
-  display: block;
+#inpt2{
+  font-family: cursive;
+  color: whitesmoke ;
+  text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+}
+#inpt1{
+  font-family: cursive;
+  color: whitesmoke ;
+  text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+}
+
+ 
+ul li a{
+  display:inline;
   text-decoration: none;
   padding: 0.8rem;
   text-align: center;
   color: var(--dark);
   text-transform: uppercase;
   font-size: 1.1rem;
-  margin-right: 25px;
+  /* margin-right: 25px; */
+  /* flex-flow: row; */
   
+}
+
+form{
+  margin: 100px 0 0 300px
+
+}
+
+ul{
+  margin-top: 50px;
+  margin-left: 350px;
+  /* justify-content: space-between; */
 }
 
 .btn1,
 .btn55{
-  display: block;
+  display: inline;
     padding: 15px 25px;
     font-family: cursive;
     color: black;
@@ -44,7 +60,7 @@ ul li a {
     text-shadow: blue 3px 3px 6px, 6px 6px 12px;
     font-weight: bold;
     text-decoration: none;
-    margin-left: 410px;
+    margin-left: 650px;
   
 }
 .btn2,
@@ -52,7 +68,7 @@ ul li a {
 .btn4
 {
   margin: auto;
-  display: block;
+  display: inline;
   padding: 15px 25px;
   font-family: cursive;
   color: whitesmoke;
@@ -107,18 +123,19 @@ footer{
 
 .search_categories{
   font-size: 1em;
-  padding: 10px 8px 10px 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-  width: 55%;
-  margin-left: 95px;
+    padding: 15px 11px 12px 13px;
+    border: 3px solid #1313BF;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    width: 52%;
+    margin-left: 124px;
 }
 
+
 .search_categories .select{
-  width: 75%;
-  }
+  width: 100%;
+}
 
 .search_categories .select select{
   background: transparent;
@@ -133,14 +150,16 @@ footer{
 }
 input[type=text] {
   width: 55%;
-  padding: 20px;
+  padding: 18px;
   margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid blue;
-  border-radius: 4px;
-  margin-left: 12px;
+  border-radius: 5px;
+  margin-left: 61px;
 
 }
+
+
 
 #inpt1 input[type=text] {
   width: 55%;
@@ -150,5 +169,17 @@ input[type=text] {
   border: 2px solid blue;
   border-radius: 4px;
   margin-left: 36px;
+
+}
+section{
+display: block;
+margin: 0px 0px 0px 0px;
+
 }
 
+select {
+  padding: 7px;
+  -moz-appearance: none;
+  appearance: none;       /* Remove default arrow */
+  background-color: white;
+}

@@ -28,10 +28,10 @@
     <form action="/delete/ <%- task.number_id %>" method="post">
         <input type="hidden" name="_method" value="delete">
         <input type="hidden" name="id" value='<%= task.number_id %>'>
-        <ul>
-            <li id="number"> The Number You Enter is <%= task.number %></li>
-            <li id="type"> The Type You Chose is <%= task.type %></li>
-            <li id="text"> The Results is <%= task.text %></li>
+        <ul id="results">
+            <li class="result"> The Number You Enter is <%= task.number %></li>
+            <li class="result"> The Type You Chose is <%= task.type %></li>
+            <li class="result"> The Results is <%= task.text %></li>
             <li><button class="btn55">Delete</button></li>
 
 

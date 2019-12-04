@@ -1,0 +1,154 @@
+* {box-sizing: border-box;}
+body {
+background-image: url(https://wallpapercave.com/wp/wp2414722.jpg);
+    position: relative;
+    background-repeat: no-repeat, repeat;
+    color: whitesmoke;
+    font-family: 'Pacifico', cursive; 
+  }
+  
+
+ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+  margin-right: 25px;
+  
+}
+ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-right: 25px;
+  
+}
+
+.btn1,
+.btn55{
+  display: block;
+    padding: 15px 25px;
+    font-family: cursive;
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+    transition: 0.8s;
+    cursor: pointer;
+    transform: scale(0.9);
+    text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 410px;
+  
+}
+.btn2,
+.btn3,
+.btn4
+{
+  margin: auto;
+  display: block;
+  padding: 15px 25px;
+  font-family: cursive;
+  color: whitesmoke;
+  font-size: 1em;
+  font-weight: bold;
+  position: relative;
+  transition: 0.8s;
+  cursor: pointer;
+  transform: scale(0.9);
+  text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+  font-weight: bold;
+  text-decoration: none;
+  
+  
+}
+
+.btn1::before,
+.btn2::before,
+.btn3::before,
+.btn4::before,
+.btn55::before {
+  transition: 0.8s;
+  background-color: black; 
+  color: black;
+}
+.btn1:hover,
+.btn2:hover,
+.btn3:hover,
+.btn4:hover,
+.btn55:hover{
+  transition: 0.8s;
+  background-color: whitesmoke;
+  color: maroon;
+  border-radius: 2%;
+  border-color: black;
+
+}
+
+footer{
+  text-align: center;
+  font-size: x-large;
+  border-radius: 20px;
+  color: whitesmoke;
+  display: block;
+  min-height: 50px;
+  margin: auto;
+  position: relative;
+  text-shadow: 3px 3px blue;
+  width: 920px;
+  margin-top: 275px;
+}
+
+.search_categories{
+  font-size: 1em;
+  padding: 10px 8px 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  width: 55%;
+  margin-left: 95px;
+}
+
+.search_categories .select{
+  width: 75%;
+  }
+
+.search_categories .select select{
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 50%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+}
+input[type=text] {
+  width: 55%;
+  padding: 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid blue;
+  border-radius: 4px;
+  margin-left: 12px;
+
+}
+
+#inpt1 input[type=text] {
+  width: 55%;
+  padding: 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid blue;
+  border-radius: 4px;
+  margin-left: 36px;
+}
+

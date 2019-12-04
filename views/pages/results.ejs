@@ -5,16 +5,20 @@
 
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="/styles/base.css">
+<link rel="stylesheet" href="/styles/layouts.css">
+<link rel="stylesheet" href="/styles/modules.css">
 
 <body>
-
-    <header>
-        <ul>
-            <li> <a href='/index'> Home Page</a> </li>
-            <li><a href='/results'> Results</a> </li>
-            <li><a href='/contact'> Contact us</a> </li>
-        </ul>
-    </header>
+       
+        <header>
+                <ul>
+                    <li class="btn2"> <a href='/index'> Home Page</a> </li>
+                    <li class="btn3"><a href='/results'> Results</a> </li>
+                    <li class="btn4"><a href='/contact'> Contact us</a> </li>
+                </ul>
+            </header>
+                
     <h1 class="qoute">“99 percent of all statistics only tell 49 percent of the story.”</h1>
     <h2 class="list">The tales of your numbers :</h2>
 
@@ -28,7 +32,7 @@
             <li id="number"> The Number You Enter is <%= task.number %></li>
             <li id="type"> The Type You Chose is <%= task.type %></li>
             <li id="text"> The Results is <%= task.text %></li>
-            <li><button>Delete</button></li>
+            <li><button class="btn55">Delete</button></li>
 
 
         </ul>
@@ -42,6 +46,7 @@
     <script src="../../public/app.js"></script>
 
 
+    <footer> All copyrights &copy;  reseved 2019 Fantastic 4 </footer>
 </body>
 
 </html>

@@ -15,3 +15,23 @@
  {
      text.children[i].style['animation-delay'] = animationDelay * i + 'ms';
  }
+
+
+
+
+ var element = document.getElementById("#nav12");
+element.addEventListener("animationstart", listener, false);
+element.addEventListener("animationend", listener, false);
+element.addEventListener("animationiteration", listener, false);
+
+element.className = "slidein";
+
+
+
+
+var element = document.getElementById("title");
+element.addEventListener("animationstart", listener, false);
+element.addEventListener("animationend", listener, false);
+element.addEventListener("animationiteration", listener, false);
+
+element.className = "slidein";

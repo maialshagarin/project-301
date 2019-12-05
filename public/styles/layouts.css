@@ -1,23 +1,46 @@
 
- 
+
  body{
-  background-color: gray;
- height : 100vh;
- background-position: center;
  background-repeat: no-repeat;
+ background-attachment: fixed;  
  background-size: cover;
-
+ position: sticky;
+ text-align: center;
+ font-size: 1em;
 
 }
-#inpt2{
-  font-family: cursive;
-  color: whitesmoke ;
-  text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+
+h1{
+  margin-top: 50px;
+  font-size: 50px;
+  text-shadow: rgb(146, 146, 155) 3px 3px 6px, 6px 6px 12px;
+  color: rgb(233, 73, 161);
+
 }
-#inpt1{
-  font-family: cursive;
-  color: whitesmoke ;
-  text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+
+label{
+  font-size: 40px;
+}
+
+#form{
+  align-items: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 80px;
+  text-align: center;
+
+} 
+fieldset
+{
+  font-size: 1.3em;
+}
+#f22
+{
+background-color:blue ;
+color: whitesmoke;
+border-radius: 40px;
+font-size: 2em;
+opacity: 50%;
 }
 
  
@@ -28,24 +51,41 @@ ul li a{
   text-align: center;
   color: var(--dark);
   text-transform: uppercase;
-  font-size: 1.1rem;
-  /* margin-right: 25px; */
-  /* flex-flow: row; */
+  font-size: 40px;  
+  margin-left: 50px;
   
+
+ 
 }
 
-form{
-  margin: 100px 0 0 300px
 
-}
 
 ul{
-  margin-top: 50px;
-  margin-left: 350px;
-  /* justify-content: space-between; */
+  margin-top: 80px;
+  color: rgb(219, 134, 214);
+  font-size: 20px;
 }
 
-.btn1,
+.btn1{
+  display: inline;
+  padding: 15px 25px;
+  font-family: cursive;
+  color: whitesmoke;
+  font-size: 3em;
+  font-weight: bold;
+  position: relative;
+  transition: 0.8s;
+  cursor: pointer;
+  transform: scale(0.9);
+  text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+  text-decoration: none;
+  margin-left: 200px;
+  border-radius: 20px;
+  width: 290px;
+}
+
+
+
 .btn55{
   display: inline;
     padding: 15px 25px;
@@ -61,8 +101,10 @@ ul{
     font-weight: bold;
     text-decoration: none;
     margin-left: 650px;
+    border-radius: 100px;
   
 }
+
 .btn2,
 .btn3,
 .btn4
@@ -78,7 +120,7 @@ ul{
   transition: 0.8s;
   cursor: pointer;
   transform: scale(0.9);
-  text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+  text-shadow: rgb(146, 146, 155) 3px 3px 6px, 6px 6px 12px;
   font-weight: bold;
   text-decoration: none;
   
@@ -91,16 +133,15 @@ ul{
 .btn4::before,
 .btn55::before {
   transition: 0.8s;
-  background-color: black; 
   color: black;
 }
+
 .btn1:hover,
 .btn2:hover,
 .btn3:hover,
 .btn4:hover,
 .btn55:hover{
   transition: 0.8s;
-  background-color: whitesmoke;
   color: maroon;
   border-radius: 2%;
   border-color: black;
@@ -111,31 +152,26 @@ footer{
   text-align: center;
   font-size: x-large;
   border-radius: 20px;
-  color: whitesmoke;
+  color: rgb(24, 119, 143);
   display: block;
   min-height: 50px;
   margin: auto;
   position: relative;
   text-shadow: 3px 3px blue;
   width: 920px;
-  margin-top: 275px;
+  margin-top: 120px;
 }
 
-.search_categories{
-  font-size: 1em;
-    padding: 15px 11px 12px 13px;
-    border: 3px solid #1313BF;
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-    width: 52%;
-    margin-left: 124px;
-}
+
 
 
 .search_categories .select{
-  width: 100%;
+  width: 50.5%;
+  margin-left: 149px;
+
 }
+
+
 
 .search_categories .select select{
   background: transparent;
@@ -148,38 +184,177 @@ footer{
   z-index: 10;
   font-size: 1em;
 }
-input[type=text] {
-  width: 55%;
-  padding: 18px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid blue;
-  border-radius: 5px;
-  margin-left: 61px;
+
+
+
+#inpt1{
+  width: 50%;
+  font-size: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  
+
+
+}
+
+#inpt2{
+
+      width: 50%;
+    font-size: 49px;
+    margin-left: 40px;
+    border-radius: 10px;
 
 }
 
 
 
-#inpt1 input[type=text] {
-  width: 55%;
-  padding: 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid blue;
-  border-radius: 4px;
-  margin-left: 36px;
-
-}
-section{
-display: block;
-margin: 0px 0px 0px 0px;
-
-}
 
 select {
+
   padding: 7px;
   -moz-appearance: none;
-  appearance: none;       /* Remove default arrow */
+  appearance: none;       
   background-color: white;
+  font-size: 50px;
+  width: 55%;
+  margin-right: -7px;
+  border-radius: 10px;
+
+
+
+}
+
+#results{
+  list-style: none;
+  text-align: center;
+  margin-right: 475px;
+  
+}
+
+
+.btn55{
+  margin-left: 14px;
+
+}
+
+
+img{
+  border-style:solid;
+  border-width: 5px;
+  border-radius: 50px;
+  border-color: gray;
+}
+
+label
+{
+
+  text-shadow: blue 3px 3px 6px, 6px 6px 12px;
+  color: purple;
+  font-size: 2em;
+}
+
+ 
+   .list{
+    color: black;
+    text-align: center;
+    font-size: 2em;
+
+  }
+  .qoute{
+    color: black;
+    text-align: center;
+  }
+  #images{
+    flex-flow: wrap;
+    flex-direction: row;
+
+  }
+
+#nav12
+{
+  display: block;
+}
+
+
+.container {
+    display: inline-block;
+    font-family: Arial;
+    width: 24.5%;
+ }
+ .container img {
+    border-radius:0%;
+
+ }
+ #choice{
+background-color: rgb(0, 0, 0);
+opacity: 50%;
+margin-right: 150px;
+margin-left: 150px ;
+height: 185px;
+ }
+ 
+#one{
+  margin-top: 80px;
+  font-size: 40px;
+}
+ .center{
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5em;
+
+}
+.one{
+  padding-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.char{
+
+  animation: an 1s ease-out 1 both;
+  text-align: center;
+} 
+
+
+@keyframes an{
+  from{
+      opacity: 0;
+      transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+  }
+
+  to{
+      opacity: 1;
+      transform: perspective(500px) translate3d(0, 0, 0);
+  }
+}
+
+p{
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
+
+
+
+
+.slidein {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left:100%;
+    width:300%
+  }
+  
+  to {
+    margin-left:0%;
+    width:100%;
+  }
 }

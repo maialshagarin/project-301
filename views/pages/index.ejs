@@ -15,9 +15,7 @@
 
 <body>
 
-        <div class="bg"></div>
-
-     <div class="grid-container">
+   <h1 id="title">NUMBERS TALE</h1>
       <header>
             <ul>
                 <li class="btn2"> <a href='/index'> Home Page</a> </li>
@@ -25,13 +23,27 @@
                 <li class="btn4"><a href='/contact'> Contact us</a> </li>
             </ul>
         </header>
-        <section>
-            <form action="/add" method="post">
+
+
+
+<!-- ////////////////////////Video///////////////////////////////// -->
+
+
+
+
+        <section id="top" class="one dark cover">
+                <video autoplay muted loop id="myVideo">
+                    <source src="/images/rain.mp4"
+                        type="video/mp4">
+                </video>
+            </section>
+
+            <form action="/add" method="post" id="home">
           
-                <label id="inpt1">
+                <label>
                 User Name
-                    <input  type="text" name="name" placeholder="Enter Your Name" required>
-                </label> <br>
+                    <input id="inpt1" type="text" name="name" placeholder="Enter Your Name" required>
+                </label> <br> <br>
 
                 <div class="search_categories">
                     <nav id="search_categories"></nav>
@@ -42,19 +54,20 @@
                     <option value="math">Maths</option>
                     <option value="year">Year</option>
                     <option value="trivia">Trivia</option>
-                </select><br>
-                </div></label>
-                <label id="inpt2">
+                </select><br> <br>
+               </label>
+                <label >
                       Number   
-                    <input type="text" name="number" placeholder="Enter Your Fav Number" required>
-                </label>
-   </section>
-                <button class="btn1"> GO </button>
+                    <input id="inpt2" type="text" name="number" placeholder="Enter Your Fav Number" >
+                </label> <br> <br>
+                <button class="btn1" class="button"> GO </button>
     </form>
 
-</div>
+
+
+    
     <footer> All copyrights &copy;  reseved 2019 Fantastic 4 </footer>
-    <script src="styles/app.js"></script>
+    <script src="/app.js"></script>
 </body>
 
 </html>

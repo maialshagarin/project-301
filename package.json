@@ -1,0 +1,29 @@
+{
+  "name": "project-301",
+  "version": "1.0.0",
+  "description": "My team ( Mai alshagarain , Obada almatrami ,Saja Swalgah , bayan al- shaqreen ) .",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maialshagarin/project-301.git"
+  },
+  "author": "obada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maialshagarin/project-301/issues"
+  },
+  "homepage": "https://github.com/maialshagarin/project-301#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "pg": "^7.14.0",
+    "superagent": "^4.1.0"
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>my fav nom</title>
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layouts.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+   <h1 id="title">NUMBERS TALE</h1>
+      <header>
+            <ul>
+                <li class="btn2"> <a href='/index'> Home Page</a> </li>
+                <li class="btn3"><a href='/results'> Results</a> </li>
+                <li class="btn4"><a href='/contact'> Contact us</a> </li>
+            </ul>
+        </header>
+
+
+
+<!-- ////////////////////////Video///////////////////////////////// -->
+
+
+
+
+        <section id="top" class="one dark cover">
+                <video autoplay muted loop id="myVideo">
+                    <source src="/images/rain.mp4"
+                        type="video/mp4">
+                </video>
+            </section>
+
+            <form action="/add" method="post" id="home">
+          
+                <label>
+                User Name
+                    <input id="inpt1" type="text" name="name" placeholder="Enter Your Name" required>
+                </label> <br> <br>
+
+                <div class="search_categories">
+                    <nav id="search_categories"></nav>
+                    
+                <select name="items" class="select"  >
+                   <option >  Choose Type </option>
+                    <option value="date">Date</option>
+                    <option value="math">Maths</option>
+                    <option value="year">Year</option>
+                    <option value="trivia">Trivia</option>
+                </select><br> <br>
+               </label>
+                <label >
+                      Number   
+                    <input id="inpt2" type="text" name="number" placeholder="Enter Your Fav Number" >
+                </label> <br> <br>
+                <button class="btn1" class="button"> GO </button>
+    </form>
+
+
+
+    
+    <footer> All copyrights &copy;  reseved 2019 Fantastic 4 </footer>
+    <script src="/app.js"></script>
+</body>
+
+</html>

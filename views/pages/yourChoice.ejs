@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layouts.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+</head>
+
+<body>
+    <section id="top" class="one dark cover">
+        <video autoplay muted loop id="myVideo">
+            <source src="/images/rain.mp4" type="video/mp4">
+        </video>
+    </section>
+
+
+
+
+
+    <header>
+        <ul>
+            <li class="btn2"> <a href='/index'> Home Page</a> </li>
+            <li class="btn3"><a href='/results'> Results</a> </li>
+            <li class="btn4"><a href='/contact'> Contact us</a> </li>
+        </ul>
+    </header>
+    <div id="choice">
+
+
+
+        <ul class="center" id="text">
+            <li class="one" > You Entered <%= item.number %> With Type <%= item.type %></li> <br>
+            
+                <li> <%= item.text %> </li>  
+            
+
+        </ul>
+        
+    </div>
+    
+   
+    <footer> All copyrights &copy; reseved 2019 Fantastic 4 </footer>
+
+    <script src="/app.js"></script>
+
+</body>
+
+</html>

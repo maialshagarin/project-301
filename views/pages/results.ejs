@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="/styles/base.css">
+<link rel="stylesheet" href="/styles/layouts.css">
+<link rel="stylesheet" href="/styles/modules.css">
+
+<body>
+
+    <header>
+        <ul id="two">
+            <li class="btn2" class="two"> <a href='/index'> Home Page</a> </li>
+            <li class="btn3" class="two"><a href='/results'> Results</a> </li>
+            <li class="btn4" class="two"><a href='/contact'> Contact us</a> </li>
+        </ul>
+    </header>
+    <section id="top" class="one dark cover">
+        <video autoplay muted loop id="myVideo">
+            <source src="/images/rain.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <h1 class="qoute">“99 percent of all statistics only tell 49 percent of the story.”</h1>
+    <h2 class="list">The tales of your numbers :</h2>
+
+
+
+    <% item.forEach(task => { %>
+
+    <form action="/delete/ <%- task.number_id %>" method="post" id="form">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value='<%= task.number_id %>'>
+        <p id="nav12">
+
+            <nav >
+                <fieldset id="f22">  The Number You Enter is <%= task.number %><br></fieldset> 
+                <fieldset id="f22"> The Type You Chose is <%= task.type %><br></fieldset>
+                <fieldset id="f22">The Results is <%= task.text %><br></fieldset>
+                <button class="btn55">Delete</button>
+                
+            </nav>
+        </p>
+    </form>
+    <% }) %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <script src="/app.js"></script>
+
+
+
+    <footer> All copyrights &copy; reseved 2019 Fantastic 4 </footer>
+</body>
+
+</html>

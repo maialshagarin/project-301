@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>my fav nom</title>
+    <link rel="stylesheet" href="../../public/styles/base.css">
+    <link rel="stylesheet" href="../../public/styles/layouts.css">
+    <link rel="stylesheet" href="../../public/styles/modules.css">
+
+</head>
+
+<body>
+    <ul>
+        <li> <a href='/index'> Home Page</a> </li>
+        <li><a href='/results'> Results</a> </li>
+        <li><a href='/contact'> Contact us</a> </li>
+    </ul>
+
+
+    <form action="/add" method="post">
+        <label>
+            User Name
+            <input type="text" name="name" placeholder="Enter Your Name">
+        </label> <br>
+      
+
+        <select name="items" class="select">
+            <option >Choose Type</option>
+            <option   value="date" >Date</option>
+            <option   value="math">Maths</option>
+            <option   value="year">Year</option>
+            <option   value="trivia">Trivia</option>
+        </select><br>
+        <label>
+            Number
+            <input type="text" name="number" placeholder="Enter Your Fav Number" required>
+        </label>
+
+        <button>GO</button>
+    </form>
+
+
+    <footer>&copy; all copyrights reseved 2019</footer>
+</body>
+
+</html>
